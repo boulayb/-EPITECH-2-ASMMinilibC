@@ -1,0 +1,88 @@
+strchr -> rslt is [ing] for [test string, i]$
+strchr -> rslt is [NULL] for [test string, o]$
+strchr -> rslt is [] for [test string, ^@]$
+$
+strlen -> len is [11] for [test string]$
+strlen -> len is [0] for [EMPTY]$
+$
+strcmp -> [0] for [NULL, NULL]$
+strcmp -> [8] for [test string, lol toast]$
+strcmp -> [-6] for [test string, zzz]$
+strcmp -> [0] for [test string, test string]$
+strcmp -> [-111] for [test string, test stringok]$
+strcmp -> [68] for [test string, 00AHAHtest string]$
+strcmp -> [116] for [test string, EMPTY]$
+strcmp -> [-48] for [EMPTY, 00AHAHtest string]$
+strcmp -> [0] for [EMPTY, EMPTY]$
+$
+memcpy -> rslt is [NULL] for [NULL, NULL, 5]$
+memcpy -> rslt is [NULL] for [NULL, other test string, 0]$
+memcpy -> rslt is [test string] for [test string, other test string, 0]$
+memcpy -> rslt is [other test string] for [other test string, other test string, 0]$
+memcpy -> rslt is [other] for [other, other test string, 5]$
+$
+memset -> rslt is [NULL] for [NULL, 0, 0]$
+memset -> rslt is [] for [, 0, 11]$
+memset -> rslt is [00000] for [00000, 48, 5]$
+memset -> rslt is [00000000000000000000000000000000000000000000000000] for [00000000000000000000000000000000000000000000000000, 48, 5]$
+memset -> rslt is [M-_M-_M-_M-_M-_] for [M-_M-_M-_M-_M-_, 484575, 5]$
+memset -> rslt is [M-_M-_M-_M-_M-_] for [M-_M-_M-_M-_M-_, 0, 0]$
+$
+memmove -> rslt is [NULL] for [NULL, NULL, 5]$
+memmove -> rslt is [NULL] for [NULL, lol toast, 0]$
+memmove -> rslt is [test string] for [test string, lol toast, 0]$
+memmove -> rslt is [lol toast] for [lol toast, , 0]$
+memmove -> rslt is [] for [, , 5]$
+$
+strncmp -> [0] for [NULL, NULL, 0]$
+strncmp -> [0] for [test string, test toast, 0]$
+strncmp -> [0] for [test string, test toast, 4]$
+strncmp -> [-1] for [test string, test toast, -1]$
+strncmp -> [-1] for [test string, test toast, 50]$
+strncmp -> [0] for [test string, test string, 0]$
+strncmp -> [0] for [test string, test string, 4]$
+strncmp -> [0] for [test string, test string, -1]$
+strncmp -> [0] for [test string, test string, 50]$
+$
+strcasecmp -> [0] for [test string, TEST STRING]$
+strcasecmp -> [-6] for [test string, ZZZ]$
+strcasecmp -> [-6] for [test string, zzz]$
+strcasecmp -> [-1] for [test string, test TOAST]$
+strcasecmp -> [0] for [test string, test string]$
+strcasecmp -> [0] for [test string, test STRING]$
+strcasecmp -> [116] for [test string, EMPTY]$
+strcasecmp -> [-116] for [EMPTY, test STRING]$
+strcasecmp -> [0] for [EMPTY, EMPTY]$
+$
+rindex -> rslt is [ing] for [test string, i]$
+rindex -> rslt is [NULL] for [test string, o]$
+rindex -> rslt is [oast] for [lol toast, o]$
+rindex -> rslt is [] for [test string, ^@]$
+$
+strstr -> rslt is [string] for [test string, str]$
+strstr -> rslt is [test string] for [test string, ]$
+strstr -> rslt is [NULL] for [test string, zerbt]$
+strstr -> rslt is [ing] for [test string, i]$
+strstr -> rslt is [test string] for [test string, test string]$
+strstr -> rslt is [NULL] for [, test string]$
+strstr -> rslt is [] for [, ]$
+$
+strpbrk -> rslt is [ing] for [test string, azyiuop]$
+strpbrk -> rslt is [NULL] for [test string, ]$
+strpbrk -> rslt is [NULL] for [test string, azyuop]$
+strpbrk -> rslt is [est string] for [test string, azyuope]$
+strpbrk -> rslt is [ing] for [test string, i]$
+strpbrk -> rslt is [test string] for [test string, test string]$
+strpbrk -> rslt is [NULL] for [, test string]$
+strpbrk -> rslt is [NULL] for [, ]$
+strpbrk -> rslt is [NULL] for [NULL, ]$
+$
+strcspn -> [7] for [test string, ring]$
+strcspn -> [11] for [test string, ZZZ]$
+strcspn -> [10] for [test string, g]$
+strcspn -> [0] for [test string, t]$
+strcspn -> [11] for [test string, ]$
+strcspn -> [0] for [test string, test string]$
+strcspn -> [11] for [test string, EMPTY]$
+strcspn -> [0] for [EMPTY, test string]$
+strcspn -> [0] for [EMPTY, EMPTY]$
